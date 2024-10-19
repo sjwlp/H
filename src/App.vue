@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onLaunch, onShow, onHide } from '@dcloudio/uni-app'
-
 onLaunch(() => {
   console.log('App Launch')
 })
@@ -14,7 +13,7 @@ onHide(() => {
 
 <style lang="scss">
 // 字体图标
-@import '@/styles/fonts.scss';
+@use '@/styles/fonts.scss';
 
 view,
 navigator,

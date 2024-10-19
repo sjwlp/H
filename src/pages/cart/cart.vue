@@ -1,11 +1,9 @@
 <script setup lang="ts">
-//
+import Xiaoxi from './components/xiaoxi.vue'
 </script>
-
 <template>
-  <view class="cart">cart</view>
+  <xiaoxi />
 </template>
-
 <style lang="scss">
 //
 </style>

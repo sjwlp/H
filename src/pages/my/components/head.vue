@@ -1,11 +1,11 @@
 <template>
   <div>
-    <my1 />
+    <HmHeadPortraitCard />
   </div>
 </template>
 
 <script setup>
-import my1 from './components/my1.vue'
+import HmHeadPortraitCard from './hm-head-portrait-card/index.vue'
 </script>
 
 <style lang="scss" scoped></style>
