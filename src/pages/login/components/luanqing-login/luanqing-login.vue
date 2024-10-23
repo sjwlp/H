@@ -160,18 +160,27 @@ export default {
     },
     doLogin() {
       // 是否校验账号密码完整性
-      if (this.$props.checkVaild) {
-        if (!this.account) {
-          this.error = '请输入账号！'
-          return
-        }
-        if (!this.password) {
-          this.error = '请输入密码！'
-          return
-        }
-      }
 
-      this.$emit('doLogin', { account: this.account, password: this.password, sex: this.sex })
+      uni.switchTab({
+        url: '/pages/index/index',
+      })
+      uni.request({
+        method: 'pust',
+        url: '/api/user/login',
+      })
+
+      // if (this.$props.checkVaild) {
+      //   if (!this.account) {
+      //     this.error = '请输入账号！'
+      //     return
+      //   }
+      //   if (!this.password) {
+      //     this.error = '请输入密码！'
+      //     return
+      //   }
+      // }
+
+      // this.$emit('doLogin', { account: this.account, password: this.password, sex: this.sex })
     },
     doLoginDelay() {
       this.$emit('doLoginDelay', {})

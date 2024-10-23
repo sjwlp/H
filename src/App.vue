@@ -26,8 +26,7 @@ button::after {
   border: none;
 }
 
-swiper,
-scroll-view {
+swiper scroll-view {
   flex: 1;
   height: 100%;
   overflow: hidden;

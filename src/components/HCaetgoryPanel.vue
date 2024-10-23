@@ -1,27 +1,20 @@
 <script setup lang="ts">
 //
-const picture = [
-  {
-    id: '1',
-    url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/uploads/slider_1.jpg',
-    title: '树洞广场',
-  },
-  {
-    id: '2',
-    url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/nav_icon_1.png',
-    title: '活动大赏',
-  },
-  {
-    id: '3',
-    url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/nav_icon_1.png',
-    title: '知识普及',
-  },
-  {
-    id: '4',
-    url: 'https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/images/nav_icon_1.png',
-    title: '树洞日记',
-  },
-]
+const props = defineProps({
+  picture: {},
+})
+function but(path: string) {
+  console.log(path)
+  uni.navigateTo({
+    url: path,
+    success: (success) => {
+      console.log('跳转成功')
+    },
+    fail: (fail) => {
+      console.log('跳转失败')
+    },
+  })
+}
 </script>
 <template>
   <view:any class="category">
@@ -35,6 +28,7 @@ const picture = [
       <image
         class="icon"
         src="https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/uploads/slider_1.jpg"
+        @click="but(item.path)"
       ></image>
       <text:any class="text">{{ item.title }}</text:any>
     </navigator>

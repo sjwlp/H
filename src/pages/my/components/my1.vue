@@ -1,17 +1,28 @@
 <script setup lang="ts">
+import { log } from 'console'
 import HmHeadPortraitCard from './hm-head-portrait-card/index.vue'
-
+function onClick(path) {
+  uni.navigateTo({
+    url: path,
+    success: (success) => {
+      console.log('跳转成功')
+    },
+    fail: (fail) => {
+      console.log('跳转失败')
+    },
+  })
+}
 const item1 = [
   {
     id: '1',
     title: '个人资料',
     url: '',
   },
-  { id: '2', title: '我的测试', url: '' },
-  { id: '6', title: '我的咨询师', url: '' },
-  { id: '3', title: '特殊用户认证', url: '' },
-  { id: '4', title: '心里专业学生认证', url: '' },
-  { id: '5', title: '心理咨询师忍认证', url: '' },
+  { id: '2', title: '我的测试', url: '/pages/my/pages/我的测试/index' },
+  { id: '6', title: '我的咨询师', url: '/pages/my/pages/我的咨询师/index' },
+  { id: '3', title: '特殊用户认证', url: '/pages/my/pages/特殊用户认证/index' },
+  { id: '4', title: '心理专业学生认证', url: '/pages/my/pages/心理专业学生认证/index' },
+  { id: '5', title: '心理咨询师证', url: '/pages/my/pages/心理咨询师认证/index' },
 ]
 </script>
 <template>
@@ -30,7 +41,7 @@ const item1 = [
             :border="false"
             link="redirectTo"
             :to="item.url"
-            @click="onClick"
+            @click="onClick(item.url)"
             class="list"
           />
         </div>

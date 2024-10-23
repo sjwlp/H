@@ -7,7 +7,7 @@
     <!-- logo文字 -->
     <!-- 搜索条 -->
     <view class="search">
-      <text class="icon-search">搜索商品</text>
+      <input type="text" class="icon-search" />搜索商品
       <text class="icon-scan"></text>
     </view>
   </view>
